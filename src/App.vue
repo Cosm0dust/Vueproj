@@ -1,17 +1,17 @@
 <template>
   <div class="wrapper">
     <div class="container">
-      <head-top />
-      <div class="content">
+      <head-top  />
+      <div class="container__content">
         <div class="options">
-          <div class="selectors">
-            <button @click="toggleClasst" :class="isActive.total ? 'active' : ''">Total</button>
-            <button  @click="toggleClassc" :class="isActive.comunity ? 'active' : ''">Comunity</button>
-            <button @click="toggleClassg" :class="isActive.game ? 'active' : ''">The Game</button>
+          <div class="options__selectors">
+            <button @click="toggleClasst" :class="isActive.total ? 'options__selectors_active' : ''">Total</button>
+            <button @click="toggleClassc" :class="isActive.comunity ? 'options__selectors_active' : ''">Comunity</button>
+            <button @click="toggleClassg" :class="isActive.game ? 'options__selectors_active' : ''">The Game</button>
           </div>
-          <div class="time">
-            <div @click="toggleClassa" :class="isActive.allTime ? 'alltime active' : 'alltime'">All time</div>
-            <div @click="toggleClassl" :class="isActive.lastMonth ? 'active' : ''">Last month</div>
+          <div class="options__time">
+            <div @click="toggleClassa" :class="isActive.allTime ? 'options__time_alltime options__time_active' : 'options__time_alltime'">All time</div>
+            <div @click="toggleClassl" :class="isActive.lastMonth ? 'options__time_active' : ''">Last month</div>
           </div>
         </div>
         <div  v-bind:key="idx" v-for="(item, idx) in gamersTitle" class="default-list" >
@@ -27,24 +27,26 @@
         (isActive.total && isActive.allTime) ? gamers :
          (isActive.comunity && isActive.allTime)?  filteredUsers:
          (isActive.game && isActive.allTime) ? filteredGamers :
+         (isActive.total && isActive.lastMonth) ? filteredTotal :
          (isActive.comunity && isActive.lastMonth) ? filteredMonthUsers :
          (isActive.game && isActive.lastMonth) ? filteredMonthGamers :
           ''">
           <span>{{ idx + 1}}</span>
-          <span>{{gamer.ava}}</span>
+          <span class="list__img-wrap"><img :src="gamer.ava" alt=""></span>
           <span>{{ gamer.DiscordID }}</span>
           <span>{{ gamer.points }}</span>
           <span>{{ gamer.activity }}</span>
           <span>{{ gamer.crystals }}</span>
-           <span v-if="gamer.achievements === 1">
+           <span class="list__achive" v-if="gamer.achievements === 1">
+             <img src="./assets/Group.svg" alt="" >
            </span>
-          <span v-else-if="gamer.achievements === 2"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
+          <span class="list__achive" v-else-if="gamer.achievements === 2"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
           </span>
-          <span v-else-if="gamer.achievements === 3"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
+          <span class="list__achive" v-else-if="gamer.achievements === 3"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
           </span>
-          <span v-else-if="gamer.achievements === 4"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
+          <span class="list__achive" v-else-if="gamer.achievements === 4"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
           </span>
-          <span v-else-if="gamer.achievements === 5"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
+          <span class="list__achive" v-else-if="gamer.achievements === 5"><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" ><img src="./assets/Group.svg" alt="" >
           </span>
         </div>
       </div>
@@ -86,7 +88,18 @@ export default {
     ],
       gamers: [
         {
-          ava: 'img',
+          ava: require('@/assets/image31.png'),
+          DiscordID: 'Crypto Coin Ninja',
+          points: '3.2k',
+          activity: 672,
+          crystals: 17,
+          achievements: 5,
+          comunity: true,
+          game: false,
+          lastMonth: true,
+        },
+        {
+          ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
@@ -97,104 +110,94 @@ export default {
           lastMonth: false,
         },
         {
-          ava: 'img',
+          ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 3,
-          comunity: true,
+          achievements: 5,
+          comunity: false,
+          game: false,
+          lastMonth: false,
+        },
+        {
+          ava: require('@/assets/image31.png'),
+          DiscordID: 'Crypto Coin Ninja',
+          points: '3.2k',
+          activity: 672,
+          crystals: 17,
+          achievements: 5,
+          comunity: false,
+          game: false,
+          lastMonth: false,
+        },
+        {
+          ava: require('@/assets/image31.png'),
+          DiscordID: 'Crypto Coin Ninja',
+          points: '3.2k',
+          activity: 672,
+          crystals: 17,
+          achievements: 5,
+          comunity: false,
+          game: false,
+          lastMonth: false,
+        },
+        {
+          ava: require('@/assets/image31.png'),
+          DiscordID: 'Crypto Coin Ninja',
+          points: '3.2k',
+          activity: 672,
+          crystals: 17,
+          achievements: 5,
+          comunity: false,
+          game: false,
+          lastMonth: false,
+        },
+        {
+          ava: require('@/assets/image31.png'),
+          DiscordID: 'Crypto Coin Ninja',
+          points: '3.2k',
+          activity: 672,
+          crystals: 17,
+          achievements: 5,
+          comunity: false,
+          game: false,
+          lastMonth: false,
+        },
+        {
+          ava: require('@/assets/image31.png'),
+          DiscordID: 'Crypto Coin Ninja',
+          points: '3.2k',
+          activity: 672,
+          crystals: 17,
+          achievements: 5,
+          comunity: false,
           game: true,
           lastMonth: false,
         },
         {
-          ava: 'img',
+          ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 3,
-          comunity: true,
+          achievements: 5,
+          comunity: false,
           game: true,
           lastMonth: false,
         },
         {
-          ava: 'img',
+          ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 3,
+          achievements: 5,
           comunity: true,
-          game: true,
-          lastMonth: false,
+          game: false,
+          lastMonth: true,
         },
-        {
-          ava: 'img',
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 3,
-          comunity: true,
-          game: true,
-          lastMonth: false,
-        },
-        {
-          ava: 'img',
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 3,
-          comunity: true,
-          game: true,
-          lastMonth: false,
-        },
-        {
-          ava: 'img',
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 3,
-          comunity: true,
-          game: true,
-          lastMonth: false,
-        },
-        {
-          ava: 'img',
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 3,
-          comunity: true,
-          game: true,
-          lastMonth: false,
-        },
-        {
-          ava: 'img',
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 3,
-          comunity: true,
-          game: true,
-          lastMonth: false,
-        },
-        {
-          ava: 'img',
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 3,
-          comunity: true,
-          game: true,
-          lastMonth: false,
-        },
+
       ],
       modalVisible: false,
       }
@@ -244,14 +247,17 @@ export default {
       return this.gamers.filter(gamer => (gamer.comunity === true && (gamer.lastMonth === true) ));
     },
     filteredMonthGamers(){
-      return this.gamers.filter(gamer => (gamer.game === true) && (gamer.lastMonth === false) );
+      return this.gamers.filter(gamer => (gamer.game === true) && (gamer.lastMonth === true) );
     },
+    filteredTotal(){
+      return this.gamers.filter(gamer => (gamer.lastMonth === true) );
+    }
   }
 }
 
 </script>
 
-<style>
+<style lang="scss">
 * {
   padding: 0;
   margin: 0;
@@ -309,6 +315,9 @@ img {
   vertical-align: top;
 }
 
+button{
+  background: transparent;
+}
 
 .wrapper{
   height: 100%;
@@ -329,106 +338,121 @@ img {
 
   display: grid;
   grid-template: minmax(165px, auto) minmax(70vh, 1fr)/ 1fr;
-  background: url("./assets/2.png") right/cover no-repeat;
+  background: black;
+
+  /*background: url("./assets/2.png") right/cover no-repeat;*/
+
+  @media (max-width:767px){
+    max-width: 766px;
+  }
+
+  &__content{
+    background: #101010;
+  }
 }
 
 
-.container .content{
-  background: #101010;
-}
+
 
 .options{
   padding: 2em 7%;
   display: flex;
   justify-content:space-between;
-  width: 85%;
-}
+  width: 100%;
 
-button{
-  background: transparent;
-}
+  &__selectors {
+    display: flex;
 
-.options .selectors{
-  display: flex;
-}
-.selectors> *{
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
-
-  /* grey */
-
-  color: #888888;
-
-  padding-right: 3em;
-
-}
-
-.selectors:last-child{
-  margin-right: 0;
-}
-
-.selectors .active{
-  font-style: normal;
-  font-weight: 400;
-  font-size: 17px;
-  line-height: 20px;
+    & > * {
+    font-style: normal;
+    font-weight: 400;
+    font-size: calc(12px + 5 * (100vw / 1920));
+    line-height: 14px;
+    color: #888888;
+    padding-right: 3em;
+  }
+    &_active{
+      font-style: normal;
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 20px;
 
 
-  color: #E8E8E8;
+      color: #E8E8E8;
 
-  text-decoration: underline;
-  text-decoration-color: #C2E900;
+      text-decoration: underline;
+      text-decoration-color: #C2E900;
+    }
+  }
+  &__time{
+    display: flex;
 
-}
-
-.time{
-  display: flex;
-
-  color: #888888;
-}
-
-.time .active{
-  color: #E8E8E8;
-}
-
-.time .alltime::after{
-  margin-left: 0.5em;
-  content: '/';
-  color: #E8E8E8;
-}
-
-.time > * {
-  padding-left: 0.5em;
-  flex-shrink: 0;
+    color: #888888;
+    &_active{
+      color: #E8E8E8;
+    }
+    &_alltime::after{
+      margin-left: 0.5em;
+      content: '/';
+      color: #E8E8E8;
+    }
+    & > * {
+      padding-left: 0.5em;
+      cursor: pointer;
+    }
+  }
 }
 
 .default-list{
   display: grid;
-  width: 80%;
-  padding: 0 8% 1em 8%;
-  grid-template: 1fr / 1fr 1fr 4fr 1fr 1fr 1fr 2fr;
+  width: 100%;
+  padding: 0 7% 1em 7%;
+  grid-template: 1fr / minmax( 32px ,1fr)  minmax( 24px ,1fr) minmax( 133px, 4fr) minmax( 32px ,1fr) minmax( 32px ,1fr) minmax( 32px ,1fr) minmax( auto ,2fr);
   font-weight: 400;
-  font-size: 17px;
+  font-size: calc(8px + 9 * (100vw / 1920));
   line-height: 20px;
   gap: 1rem;
   color: #818181;
 
+  @media (max-width: 767px) {
+    grid-template: 1fr / minmax( auto ,1fr)  minmax( auto ,1fr) minmax( auto, 4fr) minmax( auto ,1fr) minmax( auto ,1fr) minmax( auto ,1fr) minmax( auto ,2fr);
 
+  }
 }
 
 .list{
   color: white;
   display: grid;
-  width: 80%;
-  padding: 0 8% 1em 8%;
-  grid-template: 1fr / 1fr 1fr 4fr 1fr 1fr 1fr 2fr;
+  align-items: center;
+  width: 100%;
+  padding: 1em 7% 1em 7%;
+  grid-template: 1fr/ minmax( 32px ,1fr)  minmax( 24px ,1fr) minmax( 133px, 4fr) minmax( 32px ,1fr) minmax( 32px ,1fr) minmax( 32px ,1fr) minmax( auto ,2fr);
   font-weight: 400;
-  font-size: 17px;
+  font-size: calc(12px + 5 * (100vw / 1920));
   line-height: 20px;
   gap: 1rem;
+  position: relative;
+
+  @media (max-width: 767px) {
+    grid-template: 1fr / minmax( auto ,1fr)  minmax( auto ,1fr) minmax( auto, 4fr) minmax( auto ,1fr) minmax( auto ,1fr) minmax( auto ,1fr) minmax( auto ,2fr);
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    width: 84%;
+    left: 7%;
+    bottom: 0;
+    height: 1px;
+    background: #333333;
+    display: block;
+  }
+  & > * {
+    cursor: pointer;
+  }
+
 }
+
 
 
 </style>

@@ -1,23 +1,24 @@
 <template>
   <div class="modal-window" v-if="show === true" @click.stop="hideModal">
   <div @click.stop class="pop-up" >
-    <div class="head">
-      <img src="#" alt="">
-      <h2 class="name">SonOfLasG</h2>
+    <div class="pop-up__head">
+      <img src=".././assets/ava.png" alt="">
+      <h2 class="pop-up__head_name">SonOfLasG</h2>
     </div>
+
     <div class="achieves">
       <h3>Activity points</h3>
-      <div class="points-list">
+      <div class="achieves__points-list">
         <div class="elem">
-          <div class="elem-num">1524</div>
+          <div class="elem_num">1524</div>
           <div>Twitter</div>
         </div>
         <div class="elem">
-          <div class="elem-num">523</div>
+          <div class="elem_num">523</div>
           <div>Discord</div>
         </div>
         <div class="elem">
-          <div class="elem-num">54</div>
+          <div class="elem_num">54</div>
           <div>Web</div>
         </div>
       </div>
@@ -25,7 +26,7 @@
 
     <div class="achieves">
       <h3>Souls</h3>
-      <div class="points-list">
+      <div class="achieves__points-list">
         <div class="elem">
           <div >
             <svg width="37" height="38" viewBox="0 0 37 38" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,28 +77,28 @@
 
     <div class="achieves">
       <h3>Perks</h3>
-      <div class="points-list">
+      <div class="achieves__points-list">
         <div class="elem">
-          <div class="doubled">
+          <div class="elem_doubled">
             <img src="./../assets/relocation.svg" alt="item">
             <img src="./../assets/double.svg" alt="*">
-            <span class="elem-num">15</span>
+            <span class="elem_num">15</span>
           </div>
           <div>Relocation</div>
         </div>
         <div class="elem">
-          <div class="doubled">
+          <div class="elem_doubled">
             <img src="./../assets/merging.svg" alt="item">
             <img src="./../assets/double.svg" alt="*">
-            <span class="elem-num">5</span>
+            <span class="elem_num">5</span>
           </div>
           <div>Merging</div>
         </div>
         <div class="elem">
-          <div class="doubled">
+          <div class="elem_doubled">
             <img src="./../assets/linking.svg" alt="item">
             <img src="./../assets/double.svg" alt="*">
-            <span class="elem-num">5</span>
+            <span class="elem_num">5</span>
           </div>
           <div>Linking</div>
         </div>
@@ -106,28 +107,28 @@
 
     <div class="achieves">
       <h3>Crystals</h3>
-      <div class="points-list">
+      <div class="achieves__points-list">
         <div class="elem">
-          <div class="doubled">
+          <div class="elem_doubled">
             <img src="./../assets/img132.png" alt="item">
             <img src="./../assets/double.svg" alt="*">
-            <span class="elem-num">17</span>
+            <span class="elem_num">17</span>
           </div>
           <div>Terra</div>
         </div>
         <div class="elem">
-          <div class="doubled">
+          <div class="elem_doubled">
             <img src="./../assets/Group3.png" alt="item">
             <img src="./../assets/double.svg" alt="*">
-            <span class="elem-num">18</span>
+            <span class="elem_num">18</span>
           </div>
           <div>Atmos</div>
         </div>
         <div class="elem">
-          <div class="doubled">
+          <div class="elem_doubled">
             <img src="./../assets/Group4.png" alt="item">
             <img src="./../assets/double.svg" alt="*">
-            <span class="elem-num">4</span>
+            <span class="elem_num">4</span>
           </div>
           <div>Aqua</div>
         </div>
@@ -136,18 +137,18 @@
 
     <div class="achieves">
       <h3>Achievements</h3>
-      <div class="points-list">
+      <div class="achieves__points-list">
         <div class="elem">
-          <img class="achives" src="./../assets/image4.png" alt="">
+          <img class="elem__achive" src="./../assets/image4.png" alt="">
         </div>
         <div class="elem">
-          <img class="achives" src="./../assets/image5.png" alt="">
+          <img class="elem__achive" src="./../assets/image5.png" alt="">
         </div>
         <div class="elem">
-          <img class="achives" src="./../assets/image8.png" alt="">
+          <img class="elem__achive" src="./../assets/image8.png" alt="">
         </div>
         <div class="elem">
-          <img class="achives" src="./../assets/image7.png" alt="">
+          <img class="elem__achive" src="./../assets/image7.png" alt="">
         </div>
       </div>
     </div>
@@ -178,7 +179,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .modal-window{
   top: 0;
   bottom: 0;
@@ -204,27 +205,27 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 5rem;
-}
 
-.pop-up .head{
-  display: flex;
-  align-items: center;
-}
+  &__head{
+     display: flex;
+     align-items: center;
 
-.head img{
-  width: 128px;
-  height: 128px;
-}
+    &_name{
+      font-style: normal;
+      font-weight: 700;
+      font-size: 37px;
+      line-height: 110%;
 
-.head .name{
-  font-style: normal;
-  font-weight: 700;
-  font-size: 37px;
-  line-height: 110%;
+      color: #FFFFFF;
 
-  color: #FFFFFF;
+      padding-left: 10%;
+    }
+   }
 
-  padding-left: 10%;
+  &__head img{
+    width: 128px;
+    height: 128px;
+  }
 }
 
 .achieves {
@@ -243,91 +244,82 @@ export default {
   color: #888888;
 
   padding: 7% 15% 0 15% ;
-}
 
-.achieves h3{
-  font-family: 'Helvetica Neue';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 100%;
-
-  color: #E8E8E8;
-}
-
-
-
-
-.pop-up h3::before {
-  content: '';
-  display: block;
-  height: 2px;
-  width: 200%;
-  background: #444444;;
-  position: absolute;
-  top: 50%;
-  transform: translateX(50%);
-}
+  &__points-list {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    & > *{
+      flex: 1 1 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+    }
+  }
 
 
-.points-list{
-  display: flex;
-  width: 100%;
-  justify-content: space-around;
-}
+  & h3{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 100%;
 
-.points-list > *{
-  flex: 1 1 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+    color: #E8E8E8;
+  }
+
+
 }
 
 .elem{
   display: flex;
   flex-direction: column;
   align-items: center;
-}
 
-.elem-num{
-  font-family: 'Helvetica Neue';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 100%;
-  /* identical to box height, or 24px */
+  &_num{
+    font-family: 'Helvetica Neue';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 100%;
+    /* identical to box height, or 24px */
 
-  text-align: center;
+    text-align: center;
 
-  /* light */
+    /* light */
 
-  color: #E8E8E8;
-}
+    color: #E8E8E8;
+  }
 
-.elem > * {
-  padding-top: 5%;
+  & > * {
+    padding-top: 5%;
+  }
+
+
+  &__achive{
+    mix-blend-mode: screen;
+  }
+
+
+
 }
 
 svg{
-  z-index: 0;
+
+  &-num{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+
+    text-align: center;
+  }
 }
 
-.svg-num{
-  font-style: normal;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 100%;
-  /* identical to box height, or 14px */
 
-  text-align: center;
-}
 
-span{
-  z-index: 1;
-}
 
-.achieves{
-  mix-blend-mode: screen;
-}
+
 
 </style>
