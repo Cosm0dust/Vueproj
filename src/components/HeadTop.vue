@@ -6,9 +6,6 @@
         Curious about the journey? Perhaps your time will come soon for advancement? You would require your own
         unique soul for ascension</h2>
     </div>
-    <div class="header__img-wrapper">
-      <img src="./../assets/2.png" alt="">
-    </div>
 
   </header>
 </template>
@@ -25,6 +22,14 @@ export default {
   display: grid;
   grid-template:  1fr/ minmax(auto, 300px) 1fr;
   width: 100%;
+  background: url("./../assets/2.png") right top/ 90% 350% no-repeat;
+
+  @media (max-width:767px){
+    padding: 0 0 0 3%;
+    max-width: 766px;
+    background: url("./../assets/21.png") right -80px / 140% 350%  no-repeat;
+  }
+
   &__text{
     padding-top: 3%;
     display: flex;
@@ -32,7 +37,15 @@ export default {
     height: 30vh;
     justify-content: center;
     gap: 1em;
+
+    @media (max-width: 767px) {
+      height: 10em;
+      padding-top: 0;
+      justify-content: flex-end;
+    }
   }
+
+
 
   & h1{
     color: #FFFFFF;
@@ -46,8 +59,12 @@ export default {
     font-weight: 400;
     font-size: 14px;
     padding-bottom: 2em;
+
+    @media (max-width: 767px) {
+      padding-bottom: 0;
+    }
   }
-  &__img-wrapper{
+  /*&__img-wrapper{
     position: relative;
     width: 100%;
   }
@@ -61,7 +78,7 @@ export default {
     height: 100%;
     object-fit: none;
     object-position: top;
-  }
+  }*/
 
 }
 

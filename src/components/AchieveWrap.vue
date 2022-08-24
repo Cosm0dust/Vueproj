@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: "AchiveWrap",
+  name: "ModalAchiveWrap",
   props:{
     title:{
       type: Object,
