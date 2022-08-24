@@ -133,9 +133,7 @@ export default {
   min-width: 400px;
   width: 30%;
   min-height: 70%;
-
   overflow: hidden;
-
   box-shadow: 0px 10px 44px rgba(0, 0, 0, 0.5), inset 0px 0px 2px rgba(98, 98, 98, 0.25);
   border-radius: 20px;
 
@@ -143,6 +141,11 @@ export default {
   flex-direction: column;
   justify-content: space-between;
   padding-bottom: 5rem;
+
+  @media (max-width: 767px){
+    width: 100%;
+    padding: 1%;
+  }
 
   &__head{
      display: flex;
@@ -167,6 +170,10 @@ export default {
       left: 93%;
       width:2em;
       height: 2em;
+
+      @media (max-width: 767px) {
+        left: 85%;
+      }
       & img{
         max-width: 100%;
         max-height: 100%;

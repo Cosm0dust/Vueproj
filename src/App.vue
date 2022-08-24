@@ -60,6 +60,7 @@ export default {
       },
       gamersTitle:[
       {
+
         index:'#',
         ava: 'Ava',
         DiscordID: 'DiscordID',
@@ -71,6 +72,7 @@ export default {
     ],
       gamers: [
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
@@ -177,12 +179,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 2,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -283,6 +286,7 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
@@ -389,12 +393,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 4,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -495,12 +500,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -601,12 +607,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -707,12 +714,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -813,12 +821,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -919,12 +928,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -1025,12 +1035,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -1131,12 +1142,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
@@ -1237,118 +1249,13 @@ export default {
           }
         },
         {
+          id: Math.random ().toString (36).substr (2, 9),
           ava: require('@/assets/image31.png'),
           DiscordID: 'Crypto Coin Ninja',
           points: '3.2k',
           activity: 672,
           crystals: 17,
-          achievements: 5,
-          comunity: true,
-          game: false,
-          lastMonth: true,
-          modalWindow:{
-            activityPoints:[
-              {
-                media: 'Twitter',
-                amount: 1524,
-              },
-              {
-                media: 'Discord',
-                amount: 532,
-              },
-              {
-                media: 'Web',
-                amount: 24,
-              }
-            ],
-
-            souls:[
-              {
-                title: 'Total',
-                amount: 3,
-                color: '#FFFFFF',
-              },
-              {
-                title: 'Personal',
-                amount: 3,
-                color: '#C2E900',
-              },
-              {
-                title: 'Relocated',
-                amount: 1,
-                color: '#FFFFFF',
-              },
-              {
-                title: 'Merged',
-                amount: 0,
-                color: '#888888',
-              },
-              {
-                title: 'Linked',
-                amount: 0,
-                color: '#888888'
-              },
-
-            ],
-            perks: [
-              {
-                title: 'Relocation',
-                amount: 15,
-                image: require('@/assets/relocation.svg'),
-              },
-              {
-                title: 'Merging',
-                amount: 5,
-                image: require('@/assets/merging.svg'),
-              },
-              {
-                title: 'Linking',
-                amount: 5,
-                image: require('@/assets/linking.svg'),
-              },
-
-            ],
-            crystals: [
-              {
-                title: 'Terra',
-                amount: 15,
-                img: require('@/assets/img132.png'),
-              },
-              {
-                title: 'Atmos',
-                amount: 18,
-                img: require('@/assets/Group3.png'),
-              },
-              {
-                title: 'Aqua',
-                amount: 4,
-                img: require('@/assets/Group4.png'),
-              },
-
-            ],
-            achievements:[
-              {
-                achieve: require('@/assets/image4.png'),
-              },
-              {
-                achieve: require('@/assets/image5.png'),
-              },
-              {
-                achieve: require('@/assets/image8.png'),
-              },
-              {
-                achieve: require('@/assets/image7.png'),
-              },
-            ],
-          }
-        },
-        {
-          ava: require('@/assets/image31.png'),
-          DiscordID: 'Crypto Coin Ninja',
-          points: '3.2k',
-          activity: 672,
-          crystals: 17,
-          achievements: 5,
+          achievements: 1,
           comunity: true,
           game: false,
           lastMonth: true,
