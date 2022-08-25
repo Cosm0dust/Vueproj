@@ -22,24 +22,24 @@ export default {
   display: grid;
   grid-template:  1fr/ minmax(auto, 300px) 1fr;
   width: 100%;
-  background: url("./../assets/2.png") right -100px/ 110em 90em no-repeat;
+  background: url("./../assets/2.png") right -100px/ 80em  80em no-repeat;
 
+  @media (max-width: 992px) {
+    background: url("./../assets/2.png") right -30px / 40em 40em  no-repeat;
+  }
   @media (max-width:767px){
     padding: 0 0 0 3%;
-    max-width: 766px;
-    background: url("./../assets/21.png") right -100px / 60em 60em  no-repeat;
+    background: url("./../assets/21.png") right -120px / calc(968px / 100 * 75) calc(968px / 100 * 75)  no-repeat;
   }
 
+
   &__text{
-    padding-top: 3%;
     display: flex;
     flex-direction: column;
-    height: 30vh;
     justify-content: center;
     gap: 1em;
 
     @media (max-width: 767px) {
-      height: 10em;
       padding-top: 0;
       justify-content: flex-end;
     }

@@ -123,6 +123,7 @@ export default {
   bottom: 0;
   right: 0;
   left: 0;
+  padding: 12px 0;
   position: fixed;
   display: flex;
 }
@@ -146,12 +147,14 @@ export default {
   @media (max-width: 767px){
     width: 100%;
     padding:  0% 1% 7% 1%;
+    min-width: 0px;
   }
 
   &__head{
      display: flex;
      align-items: center;
     position: relative;
+    background: #101010;
 
     &_name{
       font-style: normal;
@@ -173,7 +176,9 @@ export default {
       height: 2em;
 
       @media (max-width: 767px) {
-        left: 85%;
+       left: initial;
+        right:12px;
+        top: 12px
       }
       & img{
         max-width: 100%;
@@ -204,7 +209,7 @@ export default {
 
   color: #888888;
 
-  padding: 7% 15% 0 15% ;
+  padding: 7% 5% 0 ;
 
   &__title{
     display: grid;

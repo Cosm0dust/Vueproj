@@ -1486,6 +1486,7 @@ button{
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
   background: black;
+  overflow-x: hidden;
 
 }
 
@@ -1496,7 +1497,16 @@ button{
   overflow: hidden;
   min-height: 100vh;
   display: grid;
-  grid-template: minmax(165px, auto) minmax(70vh, 1fr)/ 1fr;
+  grid-template: 15em 1fr/ 1fr;
+  
+  @media (max-width: 992px) {
+    grid-template: 11em 1fr/ 1fr;
+  }
+
+  @media (max-width: 992px) {
+    grid-template: 10em 1fr/ 1fr;
+  }
+
 
 
 
@@ -1514,6 +1524,7 @@ button{
   display: flex;
   justify-content:space-between;
   width: 100%;
+
 
   @media (max-width: 767px) {
     padding: 2em 3%;
@@ -1546,7 +1557,7 @@ button{
   }
   &__time{
     display: flex;
-
+    align-self: center;
     color: #888888;
     &_active{
       color: #E8E8E8;
