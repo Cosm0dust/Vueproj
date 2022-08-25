@@ -142,9 +142,10 @@ export default {
   justify-content: space-between;
   padding-bottom: 5rem;
 
+
   @media (max-width: 767px){
     width: 100%;
-    padding: 1%;
+    padding:  0% 1% 7% 1%;
   }
 
   &__head{

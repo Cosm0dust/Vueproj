@@ -1478,8 +1478,8 @@ button{
 }
 
 .wrapper{
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
@@ -1491,7 +1491,7 @@ button{
 
 
 .container{
-  max-width: 1920px;
+  width: 100%;
   margin: 0px auto;
   overflow: hidden;
   min-height: 100vh;
@@ -1500,10 +1500,9 @@ button{
 
 
 
-
-
   &__content{
     background: #101010;
+    padding-bottom: 3em;
   }
 }
 

@@ -22,12 +22,12 @@ export default {
   display: grid;
   grid-template:  1fr/ minmax(auto, 300px) 1fr;
   width: 100%;
-  background: url("./../assets/2.png") right top/ 90% 350% no-repeat;
+  background: url("./../assets/2.png") right -100px/ 110em 90em no-repeat;
 
   @media (max-width:767px){
     padding: 0 0 0 3%;
     max-width: 766px;
-    background: url("./../assets/21.png") right -80px / 140% 350%  no-repeat;
+    background: url("./../assets/21.png") right -100px / 60em 60em  no-repeat;
   }
 
   &__text{
